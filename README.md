@@ -41,6 +41,7 @@ of occurrence.
 ## Data Source
 Google Merchandise Store GA4 Public Dataset — hosted on BigQuery free tier.  
 Real e-commerce event logs with device, geography, session, and conversion fields.
+
 **Note on data files:** `ga4_sessions_sample.csv` (5,500 rows) is a stratified 
 sample preserving the 1.15% conversion rate of the full 221,838-session dataset. 
 Full data reproducible by running `notebooks/01_data_pipeline.ipynb` against the 
