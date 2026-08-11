@@ -58,21 +58,27 @@ and it started at this precise timestamp.
 | `Jinja2` / HTML | Automated diagnostic report generation |
 
 ## Repository Structure
-├── data/raw/ # GA4 session and daily metrics data
-│ ├── ga4_sessions.csv # Full 222k session feature table
-│ ├── ga4_sessions_sample.csv # Stratified 5,500-row sample for GitHub
-│ └── ga4_daily_metrics.csv # Daily conversion rate time series
-├── notebooks/ # Analysis notebooks (run in order)
-│ ├── 01_data_pipeline.ipynb # BigQuery ingestion + feature engineering
-│ ├── 02_anomaly_detection.ipynb # Isolation Forest + CUSUM model
-│ └── 03_root_cause_decomposition.ipynb # Segment analysis + report
-├── outputs/ # Generated artifacts
-│ ├── anomaly_detection_chart.html # Interactive anomaly visualization
-│ ├── anomaly_scores.csv # All days scored with severity
-│ ├── root_cause_chart.html # 4-panel decomposition chart
-│ ├── diagnostic_report.html # Automated client-facing report
-│ └── conversion_rate_baseline.html # Baseline time series chart
-└── requirements.txt # Reproducible environment
+
+```
+retail-site-failure-early-warning/
+├── data/
+│   └── raw/
+│       ├── ga4_sessions.csv          # Full 222k session feature table
+│       ├── ga4_sessions_sample.csv   # Stratified 5,500-row GitHub sample
+│       └── ga4_daily_metrics.csv     # Daily conversion rate time series
+├── notebooks/
+│   ├── 01_data_pipeline.ipynb        # BigQuery ingestion + feature engineering
+│   ├── 02_anomaly_detection.ipynb    # Isolation Forest + CUSUM model
+│   └── 03_root_cause_decomposition.ipynb  # Segment analysis + diagnostic report
+├── outputs/
+│   ├── anomaly_detection_chart.html  # Interactive anomaly visualization
+│   ├── anomaly_scores.csv            # All days scored with severity labels
+│   ├── root_cause_chart.html         # 4-panel decomposition chart
+│   ├── diagnostic_report.html        # Automated client-facing report
+│   └── conversion_rate_baseline.html # Baseline time series chart
+├── requirements.txt                  # Reproducible environment
+└── README.md
+```
 
 ## Data Source
 Google Merchandise Store GA4 Public Dataset — BigQuery  
