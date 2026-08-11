@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body{font-family:Arial,sans-serif;max-width:820px;
+       margin:40px auto;color:#1a1a1a;line-height:1.6}
+  .header{background:#1a1a2e;color:white;padding:24px 32px;
+           border-radius:8px;margin-bottom:24px}
+  .header h1{margin:0 0 4px 0;font-size:20px}
+  .header .sub{opacity:.7;font-size:13px}
+  .alert{background:#ffebee;border-left:4px solid #E53935;
+          padding:16px 20px;border-radius:4px;margin-bottom:20px}
+  .alert .label{font-size:11px;font-weight:600;color:#E53935;
+                 text-transform:uppercase;letter-spacing:.05em}
+  .alert .value{font-size:26px;font-weight:700;
+                 color:#E53935;margin:4px 0}
+  .metrics{display:grid;grid-template-columns:1fr 1fr 1fr;
+            gap:16px;margin-bottom:24px}
+  .metric{background:#f8f9fa;padding:16px;
+           border-radius:6px;text-align:center}
+  .metric .m-label{font-size:11px;color:#666;
+                    text-transform:uppercase}
+  .metric .m-value{font-size:22px;font-weight:600;margin-top:4px}
+  .section{margin-bottom:24px}
+  .section h2{font-size:15px;border-bottom:1px solid #eee;
+               padding-bottom:8px;margin-bottom:12px}
+  .finding{background:#fff3e0;border-left:3px solid #FF6F00;
+            padding:10px 14px;margin-bottom:8px;
+            border-radius:4px;font-size:13px}
+  .finding-dim{font-size:10px;font-weight:600;color:#FF6F00;
+                text-transform:uppercase;margin-right:8px}
+  .finding-seg{font-weight:600;margin-right:6px}
+  .finding-drop{color:#E53935;font-weight:600}
+  .rec{background:#e8f5e9;border-left:3px solid #43A047;
+        padding:10px 14px;margin-bottom:8px;
+        border-radius:4px;font-size:13px}
+  .footer{font-size:11px;color:#999;margin-top:32px;
+           padding-top:16px;border-top:1px solid #eee}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>⚠ Site Conversion Anomaly — Diagnostic Report</h1>
+  <div class="sub">Auto-generated · Date: 2021-01-27 
+  · Severity: CRITICAL</div>
+</div>
+<div class="alert">
+  <div class="label">Conversion Rate Drop Detected</div>
+  <div class="value">
+    0.00% vs 1.11% baseline
+    (-100.0%)
+  </div>
+  Est. revenue impact: <strong>$93</strong>
+  on 167 sessions
+</div>
+<div class="metrics">
+  <div class="metric">
+    <div class="m-label">Actual CVR</div>
+    <div class="m-value" style="color:#E53935">0.00%</div>
+  </div>
+  <div class="metric">
+    <div class="m-label">Baseline CVR</div>
+    <div class="m-value">1.11%</div>
+  </div>
+  <div class="metric">
+    <div class="m-label">Sessions Affected</div>
+    <div class="m-value">167</div>
+  </div>
+</div>
+<div class="section">
+  <h2>Root-Cause Findings</h2>
+  
+    <div class="finding">
+        <span class="finding-dim">Device Category</span>
+        <span class="finding-seg">desktop</span>
+        CVR dropped
+        <span class="finding-drop">-34.5%</span>
+        vs baseline (62% of traffic)
+    </div>
+    <div class="finding">
+        <span class="finding-dim">Country</span>
+        <span class="finding-seg">Canada</span>
+        CVR dropped
+        <span class="finding-drop">-100.0%</span>
+        vs baseline (4% of traffic)
+    </div>
+    <div class="finding">
+        <span class="finding-dim">Traffic Source</span>
+        <span class="finding-seg">google</span>
+        CVR dropped
+        <span class="finding-drop">-39.6%</span>
+        vs baseline (39% of traffic)
+    </div>
+    <div class="finding">
+        <span class="finding-dim">Traffic Medium</span>
+        <span class="finding-seg">cpc</span>
+        CVR dropped
+        <span class="finding-drop">-100.0%</span>
+        vs baseline (6% of traffic)
+    </div>
+</div>
+<div class="section">
+  <h2>Recommended Actions</h2>
+  <div class="rec"><strong>Immediate (0–2 hrs):</strong>
+  Check deployment logs for changes in the 24 hours preceding
+  2021-01-27 — especially checkout or payment updates.
+  </div>
+  <div class="rec"><strong>Short-term (2–24 hrs):</strong>
+  Review affected segments above for device or geo-specific issues.
+  Cross-reference with CDN and server error logs.</div>
+  <div class="rec"><strong>Follow-up (24–72 hrs):</strong>
+  Implement segment-level monitoring so future drops in any single
+  dimension trigger alerts before affecting the overall rate.</div>
+</div>
+<div class="footer">
+  Early-Warning System · Retail Site Failure Detection ·
+  Isolation Forest (contamination=0.05) + CUSUM (Pelt, RBF) ·
+  Google Merchandise Store GA4 Public Dataset
+</div>
+</body>
+</html>
